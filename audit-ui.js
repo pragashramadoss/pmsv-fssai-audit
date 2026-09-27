@@ -40,5 +40,28 @@ main.wrap,main .wrap{max-width:1450px!important}main{padding-left:14px!important
 .actions{display:flex!important;gap:8px!important;align-items:center!important;flex-wrap:wrap!important;margin:17px 0!important}
 .finish,.btn.primary,#finish{margin:17px 0!important;padding:12px 18px!important;background:var(--pmsv-green)!important;color:#fff!important;border:0!important;border-radius:10px!important;font:inherit!important;font-weight:800!important;cursor:pointer!important}
 .btn.secondary{padding:11px 16px!important;background:#fff!important;color:var(--pmsv-green)!important;border:1px solid var(--pmsv-line)!important;border-radius:10px!important;font-weight:800!important}
-@media(max-width:700px){header{padding:18px 14px 22px!important}header h1{font-size:27px!important}.score,.scorebar{font-size:9.5px!important;padding:7px 5px 10px!important}.meta{grid-template-columns:1fr!important;padding:14px!important}.pmsv-rules,.rules-top,.hyg-rules,.grade-bottom,.rating-bottom{padding:13px!important}.rules-table,.rating-table{font-size:13px!important}.tablewrap>table{border-spacing:0 7px!important}main{padding-left:8px!important;padding-right:8px!important}}
+@media(min-width:1100px){
+ .wrap,header .wrap,main.wrap{max-width:1320px!important}
+ .meta{grid-template-columns:repeat(4,minmax(0,1fr))!important;padding:18px!important}
+ .pmsv-rules,.rules-top,.hyg-rules,.grade-bottom,.rating-bottom{padding:18px!important}
+ .tablewrap>table{min-width:100%!important}
+}
+@media(min-width:701px) and (max-width:1099px){
+ .wrap,header .wrap,main.wrap{max-width:960px!important}
+ .meta{grid-template-columns:repeat(2,minmax(0,1fr))!important}
+}
+@media(max-width:700px){
+ header{padding:18px 14px 22px!important}header h1{font-size:27px!important}
+ .score,.scorebar{font-size:9.5px!important;padding:7px 5px 10px!important}
+ .meta{grid-template-columns:1fr!important;padding:14px!important}
+ .pmsv-rules,.rules-top,.hyg-rules,.grade-bottom,.rating-bottom{padding:13px!important}
+ .rules-table,.rating-table{font-size:13px!important}.tablewrap>table{border-spacing:0 7px!important}
+ main{padding-left:8px!important;padding-right:8px!important}
+}
+@media(display-mode:standalone){
+ body{padding-bottom:env(safe-area-inset-bottom)!important}
+ header{padding-top:calc(14px + env(safe-area-inset-top))!important}
+ .score,.scorebar{top:0!important}
+ button,select,textarea,input{touch-action:manipulation}
+}
 `;document.head.appendChild(st)})();
