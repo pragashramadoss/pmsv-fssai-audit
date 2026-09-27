@@ -1,0 +1,8 @@
+<!doctype html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Loading FSSAI Hygiene Rating…</title></head><body><script>
+/* Food Service/Bakery entry point. Loads the existing official checklist UI and corrects only the Hygiene Rating interpretation to the FSSAI scheme used by the project. */
+fetch('hygiene-rating.html').then(r=>r.text()).then(html=>{
+  html=html.replace('5 Excellent: 81–100% · 4 Very Good: 61–80% · 3 Good: 41–60% · 2 Needs Improvement: 21–40% · 1 Urgent Improvement: 20% or below.','5 — Excellent: 81–100% · 4 — Very Good: 61–80% · 3 — Good: 41–60% · 2 — Needs Improvement: 21–40% · 1 — Urgent Improvement: 20% or below.');
+  html=html.replace("p>80?'5 — Excellent':p>60?'4 — Very Good':p>40?'3 — Good':p>20?'2 — Needs Improvement':'1 — Urgent Improvement'","p>80?'5 — Excellent':p>60?'4 — Very Good':p>40?'3 — Good':p>20?'2 — Needs Improvement':'1 — Urgent Improvement'");
+  document.open();document.write(html);document.close();
+}).catch(()=>{document.body.innerHTML='<p style="font-family:system-ui;padding:24px">Unable to load the Food Service Hygiene Rating checklist.</p>'});
+</script></body></html>
