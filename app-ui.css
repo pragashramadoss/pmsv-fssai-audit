@@ -1,0 +1,59 @@
+/* PMSV responsive application shell: desktop, mobile browser, and installed app/PWA */
+:root{--pmsv-page:1180px;--pmsv-green:#0b6b53;--pmsv-green2:#0f8a68;--pmsv-bg:#f4f8f6;--pmsv-line:#dce8e3;--pmsv-ink:#15231f;--pmsv-muted:#63736d}
+html,body{max-width:100%;overflow-x:hidden}
+body{background:var(--pmsv-bg)!important;color:var(--pmsv-ink)!important;font-family:Inter,system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif!important}
+.wrap{width:min(var(--pmsv-page),calc(100% - 40px))!important;max-width:none!important;margin-left:auto!important;margin-right:auto!important}
+header{background:linear-gradient(135deg,var(--pmsv-green),var(--pmsv-green2))!important}
+.panel{box-shadow:0 10px 30px rgba(25,70,55,.07)!important}
+#landing .home-actions,#landing .actions{grid-template-columns:repeat(3,minmax(0,1fr))!important}
+.type{aspect-ratio:auto!important;min-height:138px!important;padding:18px!important}
+.grid{align-items:stretch}
+.tile{min-height:150px!important}
+.card{min-width:0}
+.tablewrap{max-width:100%;overflow:auto}
+@media(min-width:1024px){
+  header{padding-left:0!important;padding-right:0!important}
+  main{padding-left:0!important;padding-right:0!important}
+  .panel{padding:28px!important}
+  .grid{gap:14px!important}
+  .type{min-height:136px!important}
+  .type .icon{font-size:28px!important}
+  .type .name{font-size:16px!important}
+  .summary{grid-template-columns:repeat(4,minmax(0,1fr))!important}
+  .formgrid{grid-template-columns:repeat(2,minmax(0,1fr))!important}
+}
+@media(min-width:701px) and (max-width:1023px){
+  .wrap{width:min(920px,calc(100% - 32px))!important}
+  #landing .home-actions,#landing .actions{grid-template-columns:repeat(3,minmax(0,1fr))!important}
+  .grid{grid-template-columns:repeat(3,minmax(0,1fr))!important}
+  .type{min-height:128px!important}
+}
+@media(max-width:700px){
+  .wrap{width:100%!important;max-width:none!important;padding-left:14px!important;padding-right:14px!important}
+  header .wrap{padding-left:14px!important;padding-right:14px!important}
+  header{padding-left:0!important;padding-right:0!important}
+  main{padding-left:0!important;padding-right:0!important}
+  .panel{margin-top:-22px!important;border-radius:18px!important;padding:16px!important}
+  #landing .home-actions,#landing .actions{grid-template-columns:1fr!important}
+  .grid{grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:10px!important}
+  .type{aspect-ratio:1/1!important;min-height:0!important;padding:13px!important}
+  .type .icon{font-size:25px!important}
+  .type .name{font-size:14px!important}
+  .tile{min-height:0!important}
+  .summary{grid-template-columns:repeat(2,minmax(0,1fr))!important}
+  .formgrid{grid-template-columns:1fr!important}
+  .card{border-radius:14px!important}
+  .footer{align-items:flex-end!important}
+}
+@media(max-width:380px){
+  .grid{grid-template-columns:repeat(2,minmax(0,1fr))!important}
+  .type{padding:11px!important}
+  .type .name{font-size:13px!important}
+}
+@media(display-mode:standalone){
+  body{padding-bottom:env(safe-area-inset-bottom)}
+  header{padding-top:calc(16px + env(safe-area-inset-top))!important}
+  .back{min-height:32px;display:inline-flex;align-items:center}
+  .panel{box-shadow:none!important}
+  button,.btn,.type,.action{touch-action:manipulation}
+}
