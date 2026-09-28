@@ -263,3 +263,5 @@ body.pmsv-audit-integrated .comment{box-sizing:border-box!important;display:bloc
   body.pmsv-audit-integrated .pmsv-draft,
   body.pmsv-audit-integrated .pmsv-reset{font-size:7.6px!important;padding:3px 3px!important}
 }
+
+body.pmsv-audit-integrated .score-chip .mobile-label{display:none}
